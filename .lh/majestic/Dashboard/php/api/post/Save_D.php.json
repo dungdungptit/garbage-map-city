@@ -1,0 +1,30 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/Save_D.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1650505981001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506483824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post_driver.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_driver.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650793709746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_driver.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650794470887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_driver.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                }
+            ],
+            "date": 1650505981001,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\n    header(\"Access-Control-Allow-Origin: *\");\r\n    header(\"Content-Type: application/json\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post_driver.php\");\r\n    // instantiate DB & connect\r\n    $database = new Database();\r\n    $db = $database->connect();\r\n    // instantiate blog post object \r\n    $post  = new Post_driver($db);\r\n    // Get id\r\n    $post->id = $_GET['id'];\r\n    $post->fullname = $_GET['fullname'];\r\n    $post->addresses = $_GET['address'];\r\n    $post->phone = $_GET['phone'];\r\n    $post->gender = $_GET['gender'];\r\n    $post->birth = $_GET['birth'];\r\n    // $post->images = $_GET['images'];\r\n    $post->statuses = $_GET['status'];\r\n\r\n    $post->update();\r\n\r\n    // Create array\r\n    $yn = array(\r\n        'true'=>\"true\"\r\n    );\r\n    echo json_encode($yn);\r\n"
+        }
+    ]
+}

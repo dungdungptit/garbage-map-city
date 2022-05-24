@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Dashboard/css/bin-table.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1648820597304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648820606412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-.tab\n\\ No newline at end of file\n+.table-responsive {\r\n+  margin-top: ;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648820856909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-.table-responsive {\r\n-  margin-top: ;\r\n-}\n\\ No newline at end of file\n+/* .table-responsive {\r\n+  margin-top: 30px;\r\n+} */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648821296756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +0,0 @@\n-/* .table-responsive {\r\n-  margin-top: 30px;\r\n-} */\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1648820597304,
+            "name": "Commit-0",
+            "content": ".tab"
+        }
+    ]
+}

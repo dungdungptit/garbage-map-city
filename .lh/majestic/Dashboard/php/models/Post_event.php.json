@@ -1,0 +1,94 @@
+{
+    "sourceFile": "majestic/Dashboard/php/models/Post_event.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1651078313044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651078402769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   private $table = 'account';\r\n \r\n   // post properties\r\n   public $id;\r\n-  public $username;\r\n+  public $id_vehicle;\r\n   public $password;\r\n   public $fullname;\r\n \r\n   public function __construct($db)\r\n@@ -44,4 +44,5 @@\n     $this->password = $row['password'];\r\n     $this->fullname = $row['fullname'];\r\n   }\r\n }\r\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651078410260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n   // post properties\r\n   public $id;\r\n   public $id_vehicle;\r\n-  public $password;\r\n+  public $speed;\r\n   public $fullname;\r\n \r\n   public function __construct($db)\r\n   {\r\n"
+                },
+                {
+                    "date": 1651078417915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   // post properties\r\n   public $id;\r\n   public $id_vehicle;\r\n   public $speed;\r\n-  public $fullname;\r\n+  public $angle;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078429949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,15 @@\n   public $id;\r\n   public $id_vehicle;\r\n   public $speed;\r\n   public $angle;\r\n+  public $odometer;\r\n+  public $angle;\r\n+  public $angle;\r\n+  public $angle;\r\n+  public $angle;\r\n+  public $angle;\r\n+  public $angle;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078438028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n   public $id_vehicle;\r\n   public $speed;\r\n   public $angle;\r\n   public $odometer;\r\n+  public $engine;\r\n   public $angle;\r\n   public $angle;\r\n   public $angle;\r\n   public $angle;\r\n   public $angle;\r\n-  public $angle;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078450642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n   public $id_vehicle;\r\n   public $speed;\r\n   public $angle;\r\n   public $odometer;\r\n-  public $engine;\r\n+  public $enginehour;\r\n+  public $altitude;\r\n   public $angle;\r\n   public $angle;\r\n   public $angle;\r\n   public $angle;\r\n-  public $angle;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078461630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,12 @@\n   public $angle;\r\n   public $odometer;\r\n   public $enginehour;\r\n   public $altitude;\r\n+  public $timeposition;\r\n   public $angle;\r\n   public $angle;\r\n   public $angle;\r\n-  public $angle;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078467693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,11 @@\n   public $odometer;\r\n   public $enginehour;\r\n   public $altitude;\r\n   public $timeposition;\r\n+  public $timeserver;\r\n   public $angle;\r\n   public $angle;\r\n-  public $angle;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078473749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n   public $enginehour;\r\n   public $altitude;\r\n   public $timeposition;\r\n   public $timeserver;\r\n-  public $angle;\r\n-  public $angle;\r\n+  public $lat;\r\n+  public $long;\r\n \r\n   public function __construct($db)\r\n   {\r\n     $this->conn = $db;\r\n"
+                },
+                {
+                    "date": 1651078491255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   // Get Post\r\n   public function read()\r\n   {\r\n     // Create query\r\n-    $query = 'SELECT id, username, password, fullname FROM ' . $this->table;\r\n+    $query = 'SELECT * FROM ' . $this->table;\r\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // Excute query\r\n     $stmt->execute();\r\n"
+                },
+                {
+                    "date": 1651078499276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n class Post_acc\r\n {\r\n   private $conn;\r\n-  private $table = 'account';\r\n+  private $table = 've';\r\n \r\n   // post properties\r\n   public $id;\r\n   public $id_vehicle;\r\n"
+                },
+                {
+                    "date": 1651078524559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n class Post_acc\r\n {\r\n   private $conn;\r\n-  private $table = 've';\r\n+  private $table = 'vevent';\r\n \r\n   // post properties\r\n   public $id;\r\n   public $id_vehicle;\r\n@@ -34,9 +34,9 @@\n   }\r\n   // Get Single Post\r\n   public function read_single()\r\n   {\r\n-    $query = 'SELECT id, username, password, fullname FROM ' . $this->table . ' WHERE username = ? and password = ?';\r\n+    $query = 'SELECT * FROM ' . $this->table . ' WHERE username = ? and password = ?';\r\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // bind id\r\n     $stmt->bindParam(1, $this->username);\r\n"
+                },
+                {
+                    "date": 1651078534697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n   }\r\n   // Get Single Post\r\n   public function read_single()\r\n   {\r\n-    $query = 'SELECT * FROM ' . $this->table . ' WHERE username = ? and password = ?';\r\n+    $query = 'SELECT * FROM ' . $this->table . ' WHERE id = ? and password = ?';\r\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // bind id\r\n     $stmt->bindParam(1, $this->username);\r\n"
+                },
+                {
+                    "date": 1651078546736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n   }\r\n   // Get Single Post\r\n   public function read_single()\r\n   {\r\n-    $query = 'SELECT * FROM ' . $this->table . ' WHERE id = ? and password = ?';\r\n+    $query = 'SELECT * FROM ' . $this->table . ' WHERE IDVEHICLE = ? and password = ?';\r\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // bind id\r\n     $stmt->bindParam(1, $this->username);\r\n"
+                },
+                {
+                    "date": 1651078555626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n   }\r\n   // Get Single Post\r\n   public function read_single()\r\n   {\r\n-    $query = 'SELECT * FROM ' . $this->table . ' WHERE IDVEHICLE = ? and password = ?';\r\n+    $query = 'SELECT * FROM ' . $this->table . ' WHERE ID_VEHICLE = ?';\r\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // bind id\r\n     $stmt->bindParam(1, $this->username);\r\n"
+                },
+                {
+                    "date": 1651078560742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,8 @@\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // bind id\r\n     $stmt->bindParam(1, $this->username);\r\n-    $stmt->bindParam(2, $this->password);\r\n     // Excute query\r\n     $stmt->execute();\r\n     $row = $stmt->fetch(PDO::FETCH_ASSOC);\r\n \r\n"
+                },
+                {
+                    "date": 1651078607092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,17 +38,14 @@\n     $query = 'SELECT * FROM ' . $this->table . ' WHERE ID_VEHICLE = ?';\r\n     // prepare statement\r\n     $stmt = $this->conn->prepare($query);\r\n     // bind id\r\n-    $stmt->bindParam(1, $this->username);\r\n+    $stmt->bindParam(1, $this->id_vehicle);\r\n     // Excute query\r\n     $stmt->execute();\r\n     $row = $stmt->fetch(PDO::FETCH_ASSOC);\r\n \r\n     // set properties\r\n     $this->id = $row['id'];\r\n-    $this->username = $row['username'];\r\n-    $this->password = $row['password'];\r\n-    $this->fullname = $row['fullname'];\r\n   }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651078631039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,18 @@\n     $stmt->execute();\r\n     $row = $stmt->fetch(PDO::FETCH_ASSOC);\r\n \r\n     // set properties\r\n-    $this->id = $row['id'];\r\n+    $this->$id = $row['id'];\r\n+    $this->$id_vehicle = $row['id'];\r\n+    $this->$speed = $row['id'];\r\n+    $this->$angle = $row['id'];\r\n+    $this->$odometer = $row['id'];\r\n+    $this->$enginehour = $row['id'];\r\n+    $this->$altitude = $row['id'];\r\n+    $this->$timeposition = $row['id'];\r\n+    $this->$timeserver = $row['id'];\r\n+    $this->$lat = $row['id'];\r\n+    $this->$long = $row['id'];\r\n   }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651078648412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,18 +44,18 @@\n     $stmt->execute();\r\n     $row = $stmt->fetch(PDO::FETCH_ASSOC);\r\n \r\n     // set properties\r\n-    $this->$id = $row['id'];\r\n-    $this->$id_vehicle = $row['id'];\r\n-    $this->$speed = $row['id'];\r\n-    $this->$angle = $row['id'];\r\n-    $this->$odometer = $row['id'];\r\n-    $this->$enginehour = $row['id'];\r\n-    $this->$altitude = $row['id'];\r\n-    $this->$timeposition = $row['id'];\r\n-    $this->$timeserver = $row['id'];\r\n-    $this->$lat = $row['id'];\r\n-    $this->$long = $row['id'];\r\n+    $this->id = $row['$id'];\r\n+    $this->id_vehicle = $row['$id_vehicle'];\r\n+    $this->speed = $row['$speed'];\r\n+    $this->angle = $row['$angle'];\r\n+    $this->odometer = $row['$odometer'];\r\n+    $this->enginehour = $row['$enginehour'];\r\n+    $this->altitude = $row['$altitude'];\r\n+    $this->timeposition = $row['$timeposition'];\r\n+    $this->timeserver = $row['$timeserver'];\r\n+    $this->lat = $row['$lat'];\r\n+    $this->long = $row['$long'];\r\n   }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1651078313044,
+            "name": "Commit-0",
+            "content": "<?php\r\nclass Post_acc\r\n{\r\n  private $conn;\r\n  private $table = 'account';\r\n\r\n  // post properties\r\n  public $id;\r\n  public $username;\r\n  public $password;\r\n  public $fullname;\r\n\r\n  public function __construct($db)\r\n  {\r\n    $this->conn = $db;\r\n  }\r\n  // Get Post\r\n  public function read()\r\n  {\r\n    // Create query\r\n    $query = 'SELECT id, username, password, fullname FROM ' . $this->table;\r\n    // prepare statement\r\n    $stmt = $this->conn->prepare($query);\r\n    // Excute query\r\n    $stmt->execute();\r\n    return $stmt;\r\n  }\r\n  // Get Single Post\r\n  public function read_single()\r\n  {\r\n    $query = 'SELECT id, username, password, fullname FROM ' . $this->table . ' WHERE username = ? and password = ?';\r\n    // prepare statement\r\n    $stmt = $this->conn->prepare($query);\r\n    // bind id\r\n    $stmt->bindParam(1, $this->username);\r\n    $stmt->bindParam(2, $this->password);\r\n    // Excute query\r\n    $stmt->execute();\r\n    $row = $stmt->fetch(PDO::FETCH_ASSOC);\r\n\r\n    // set properties\r\n    $this->id = $row['id'];\r\n    $this->username = $row['username'];\r\n    $this->password = $row['password'];\r\n    $this->fullname = $row['fullname'];\r\n  }\r\n}\r\n"
+        }
+    ]
+}

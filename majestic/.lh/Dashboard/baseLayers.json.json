@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Dashboard/baseLayers.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1648477932511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648477945914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-layer[\r\n+[\r\n \t{\r\n \t\t\"domain\": \"\\\"https://thuduc-maps.hcmgis.vn/thuducserver/gwc/service/wmts?layer=thuduc:thuduc_maps&style\\\"=&tilematrixset=EPSG:900913&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/png&TileMatrix=EPSG:900913:{z}&TileCol={x}&TileRow={y}\",\r\n \t\t\"minZoom\": 0,\r\n \t\t\"maxZoom\": 25,\r\n"
+                },
+                {
+                    "date": 1648477953141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\t\"\"[\r\n+\t\"l\"[\r\n \t{\r\n \t\t\"domain\": \"\\\"https://thuduc-maps.hcmgis.vn/thuducserver/gwc/service/wmts?layer=thuduc:thuduc_maps&style\\\"=&tilematrixset=EPSG:900913&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/png&TileMatrix=EPSG:900913:{z}&TileCol={x}&TileRow={y}\",\r\n \t\t\"minZoom\": 0,\r\n \t\t\"maxZoom\": 25,\r\n"
+                }
+            ],
+            "date": 1648477932511,
+            "name": "Commit-0",
+            "content": "layer[\r\n\t{\r\n\t\t\"domain\": \"\\\"https://thuduc-maps.hcmgis.vn/thuducserver/gwc/service/wmts?layer=thuduc:thuduc_maps&style\\\"=&tilematrixset=EPSG:900913&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/png&TileMatrix=EPSG:900913:{z}&TileCol={x}&TileRow={y}\",\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"HCMGIS Maps\\\"\"\r\n\t},\r\n\t{\r\n\t\t\"domain\": \"\\\"https://mapproxy.hcmgis.vn/wmts/hcmgis:basemaps/webmercator/{z}/{x}/{y}.png\\\"\",\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"HCMGIS Maps - via MapProxy\\\"\"\r\n\t},\r\n\t{\r\n\t\t\"domain\": \"\\\"http://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}\\\"\",\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"Google Maps\\\"\"\r\n\t},\r\n\t{\r\n\t\t\"domain\": \"\\\"http://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}\\\"\",\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"Google Satellite\\\"\"\r\n\t},\r\n\t{\r\n\t\t\"domain\": \"\\\"http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}\\\"\",\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"Google Satellite Hybrid\\\"\"\r\n\t},\r\n\t{\r\n\t\t\"domain\": \"\\\"http://server.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\\\"\",\r\n\t\t\"subdomains\": [\"mt0\", \"mt1\", \"mt2\", \"mt3\"],\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"Esri Street\\\"\"\r\n\t},\r\n\t{\r\n\t\t\"domain\": \"\\\"http://server.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}\\\"\",\r\n\t\t\"subdomains\": [\"mt0\", \"mt1\", \"mt2\", \"mt3\"],\r\n\t\t\"minZoom\": 0,\r\n\t\t\"maxZoom\": 25,\r\n\t\t\"attribution\": \"\\\"Esri Street\\\"\"\r\n\t}\r\n]\r\n"
+        }
+    ]
+}

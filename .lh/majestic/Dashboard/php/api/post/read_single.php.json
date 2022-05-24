@@ -1,0 +1,30 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/read_single.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1650505972943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506473939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650793744552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650794464850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                }
+            ],
+            "date": 1650505972943,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\n    header(\"Access-Control-Allow-Origin: *\");\r\n    header(\"Content-Type: application/json\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post.php\");\r\n    // instantiate DB & connect\r\n    $database = new Database();\r\n    $db = $database->connect();\r\n    // instantiate blog post object \r\n    $post  = new Post($db);\r\n    // Get id\r\n    $post->vehicle_id = isset($_GET['vehicle_id']) ? $_GET['vehicle_id']:die();\r\n    // Get post data\r\n    $post->read_single();\r\n\r\n    // Create array\r\n    $post_arr = array(\r\n        'yes/no' => isset($_GET['vehicle_id']),\r\n        'vehicle_id' => $post->vehicle_id,\r\n        'bin_id' => $post->bin_id,\r\n        'bin_address' => $post->bin_address,\r\n        'driver_fullname' => $post->driver_fullname,\r\n        'driver_id' => $post->driver_id\r\n    );\r\n    // Make JSON\r\n    print_r(json_encode($post_arr));\r\n"
+        }
+    ]
+}

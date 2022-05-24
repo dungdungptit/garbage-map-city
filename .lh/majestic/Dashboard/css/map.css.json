@@ -1,0 +1,54 @@
+{
+    "sourceFile": "majestic/Dashboard/css/map.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1650507134904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650507162560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n-/* \r\n+\r\n .map-container {\r\n \tz-index: 1;\r\n \theight: calc(100vh - 60px);\r\n \twidth: 100%;\r\n \t/*padding-left: 256px;*/\r\n \ttransition: padding-left 0.25s ease-out;\r\n-} */\r\n+}\r\n .map {\r\n \twidth: 100%;\r\n \theight: 100%;\r\n }\r\n"
+                },
+                {
+                    "date": 1650507201488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \r\n .map-container {\r\n-\tz-index: 1;\r\n+\t/* z-index: 1; */\r\n \theight: calc(100vh - 60px);\r\n-\twidth: 100%;\r\n+\t/* width: 100%; */\r\n \t/*padding-left: 256px;*/\r\n \ttransition: padding-left 0.25s ease-out;\r\n }\r\n .map {\r\n"
+                },
+                {
+                    "date": 1650507226669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n \r\n .map-container {\r\n \t/* z-index: 1; */\r\n \theight: calc(100vh - 60px);\r\n-\t/* width: 100%; */\r\n+\twidth: 100%;\r\n \t/*padding-left: 256px;*/\r\n-\ttransition: padding-left 0.25s ease-out;\r\n+\t/* transition: padding-left 0.25s ease-out; */\r\n }\r\n .map {\r\n \twidth: 100%;\r\n \theight: 100%;\r\n"
+                },
+                {
+                    "date": 1650507804176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,4 @@\n \r\n-.map-container {\r\n-\t/* z-index: 1; */\r\n-\theight: calc(100vh - 60px);\r\n-\twidth: 100%;\r\n-\t/*padding-left: 256px;*/\r\n-\t/* transition: padding-left 0.25s ease-out; */\r\n-}\r\n-.map {\r\n-\twidth: 100%;\r\n-\theight: 100%;\r\n-}\r\n .leaflet-routing-container {\r\n     display:none !important;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650507814319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n-\r\n+.map\r\n .leaflet-routing-container {\r\n     display:none !important;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650507819650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n-.map\r\n+.map-container {\r\n+\t\r\n+}\r\n .leaflet-routing-container {\r\n     display:none !important;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650507834373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n .map-container {\r\n-\t\r\n+\twidth: 100%;\r\n }\r\n+.map{\r\n+\tw100\r\n+}\r\n .leaflet-routing-container {\r\n     display:none !important;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650507841079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \twidth: 100%;\r\n }\r\n .map{\r\n \twidth: 100%;\r\n-\t\r\n+\theight: 100%;\r\n }\r\n .leaflet-routing-container {\r\n     display:none !important;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650509068331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \r\n .map-container {\r\n-\tflost\r\n+\tflos\r\n \theight: calc(100vh - 60px);\r\n \twidth: 100%;\r\n \t/* padding-left: 256px; */\r\n \ttransition: padding-left 0.25s ease-out;\r\n"
+                }
+            ],
+            "date": 1650507134904,
+            "name": "Commit-0",
+            "content": "/* \r\n.map-container {\r\n\tz-index: 1;\r\n\theight: calc(100vh - 60px);\r\n\twidth: 100%;\r\n\t/*padding-left: 256px;*/\r\n\ttransition: padding-left 0.25s ease-out;\r\n} */\r\n.map {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n.leaflet-routing-container {\r\n    display:none !important;\r\n}"
+        }
+    ]
+}

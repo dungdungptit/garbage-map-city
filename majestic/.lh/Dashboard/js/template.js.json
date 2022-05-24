@@ -1,0 +1,170 @@
+{
+    "sourceFile": "Dashboard/js/template.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 38,
+            "patches": [
+                {
+                    "date": 1648475364809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648475374397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      \n+      var sude\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648475386957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      var sude\n+      var sideWidth = document.querySelector('.sidebar').offsetWidth;\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648475536925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,61 +1,67 @@\n-(function($) {\n-  'use strict';\n-  $(function() {\n-    var body = $('body');\n-    var contentWrapper = $('.content-wrapper');\n-    var scroller = $('.container-scroller');\n-    var footer = $('.footer');\n-    var sidebar = $('.sidebar');\n+(function ($) {\n+\t'use strict';\n+\t$(function () {\n+\t\tvar body = $('body');\n+\t\tvar contentWrapper = $('.content-wrapper');\n+\t\tvar scroller = $('.container-scroller');\n+\t\tvar footer = $('.footer');\n+\t\tvar sidebar = $('.sidebar');\n \n-    //Add active class to nav-link based on url dynamically\n-    //Active class can be hard coded directly in html file also as required\n+\t\t//Add active class to nav-link based on url dynamically\n+\t\t//Active class can be hard coded directly in html file also as required\n \n-    function addActiveClass(element) {\n-      if (current === \"\") {\n-        //for root url\n-        if (element.attr('href').indexOf(\"index.html\") !== -1) {\n-          element.parents('.nav-item').last().addClass('active');\n-          if (element.parents('.sub-menu').length) {\n-            element.closest('.collapse').addClass('show');\n-            element.addClass('active');\n-          }\n-        }\n-      } else {\n-        //for other url\n-        if (element.attr('href').indexOf(current) !== -1) {\n-          element.parents('.nav-item').last().addClass('active');\n-          if (element.parents('.sub-menu').length) {\n-            element.closest('.collapse').addClass('show');\n-            element.addClass('active');\n-          }\n-          if (element.parents('.submenu-item').length) {\n-            element.addClass('active');\n-          }\n-        }\n-      }\n-    }\n+\t\tfunction addActiveClass(element) {\n+\t\t\tif (current === '') {\n+\t\t\t\t//for root url\n+\t\t\t\tif (element.attr('href').indexOf('index.html') !== -1) {\n+\t\t\t\t\telement.parents('.nav-item').last().addClass('active');\n+\t\t\t\t\tif (element.parents('.sub-menu').length) {\n+\t\t\t\t\t\telement.closest('.collapse').addClass('show');\n+\t\t\t\t\t\telement.addClass('active');\n+\t\t\t\t\t}\n+\t\t\t\t}\n+\t\t\t} else {\n+\t\t\t\t//for other url\n+\t\t\t\tif (element.attr('href').indexOf(current) !== -1) {\n+\t\t\t\t\telement.parents('.nav-item').last().addClass('active');\n+\t\t\t\t\tif (element.parents('.sub-menu').length) {\n\\ No newline at end of file\n+\t\t\t\t\t\telement.closest('.collapse').addClass('show');\n+\t\t\t\t\t\telement.addClass('active');\n+\t\t\t\t\t}\n+\t\t\t\t\tif (element.parents('.submenu-item').length) {\n+\t\t\t\t\t\telement.addClass('active');\n+\t\t\t\t\t}\n+\t\t\t\t}\n+\t\t\t}\n+\t\t}\n \n-    var current = location.pathname.split(\"/\").slice(-1)[0].replace(/^\\/|\\/$/g, '');\n-    $('.nav li a', sidebar).each(function() {\n-      var $this = $(this);\n-      addActiveClass($this);\n-    })\n+\t\tvar current = location.pathname\n+\t\t\t.split('/')\n+\t\t\t.slice(-1)[0]\n+\t\t\t.replace(/^\\/|\\/$/g, '');\n+\t\t$('.nav li a', sidebar).each(function () {\n+\t\t\tvar $this = $(this);\n+\t\t\taddActiveClass($this);\n+\t\t});\n \n-    //Close other submenu in sidebar on opening any\n+\t\t//Close other submenu in sidebar on opening any\n \n-    sidebar.on('show.bs.collapse', '.collapse', function() {\n-      sidebar.find('.collapse.show').collapse('hide');\n-    });\n+\t\tsidebar.on('show.bs.collapse', '.collapse', function () {\n+\t\t\tsidebar.find('.collapse.show').collapse('hide');\n+\t\t});\n \n+\t\t//Change sidebar\n \n-    //Change sidebar\n-\n-    $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n-      body.toggleClass('sidebar-icon-only');\n-      var sideWidth = document.querySelector('.sidebar').offsetWidth;\n-    });\n-\n-    //checkbox and radios\n-    $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n-  });\n-})(jQuery);\n+\t\tconst mapWidth = document.querySelector('.map-container');\n+\t\tconsole.log(mapWidth);\n+\t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n+\t\t\tbody.toggleClass('sidebar-icon-only');\n+\t\t\tvar sideWidth = document.querySelector('.sidebar').offsetWidth;\n+\t\t\tmapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n+\t\t});\n+\t\t//checkbox and radios\n+\t\t$('.form-check label,.form-radio label').append(\n+\t\t\t'<i class=\"input-helper\"></i>'\n+\t\t);\n+\t});\n+})(jQuery);\n"
+                },
+                {
+                    "date": 1648475547990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,12 +56,12 @@\n \t\tconsole.log(mapWidth);\n \t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n \t\t\tbody.toggleClass('sidebar-icon-only');\n \t\t\tvar sideWidth = document.querySelector('.sidebar').offsetWidth;\n-\t\t\tmapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n+\t\t\t// mapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n \t\t});\n \t\t//checkbox and radios\n \t\t$('.form-check label,.form-radio label').append(\n \t\t\t'<i class=\"input-helper\"></i>'\n \t\t);\n \t});\n\\ No newline at end of file\n-})(jQuery);\n+})(jQuery);\n"
+                },
+                {
+                    "date": 1648475554285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n \t\t//Change sidebar\n \n \t\tconst mapWidth = document.querySelector('.map-container');\n-\t\tconsole.log(mapWidth);\n+\t\t// console.log(mapWidth);\n \t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n \t\t\tbody.toggleClass('sidebar-icon-only');\n \t\t\tvar sideWidth = document.querySelector('.sidebar').offsetWidth;\n \t\t\t// mapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n@@ -63,5 +63,5 @@\n \t\t$('.form-check label,.form-radio label').append(\n \t\t\t'<i class=\"input-helper\"></i>'\n \t\t);\n \t});\n-})(jQuery);\n\\ No newline at end of file\n+})(jQuery);\n"
+                },
+                {
+                    "date": 1648475564716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n \t\tconst mapWidth = document.querySelector('.map-container');\n \t\t// console.log(mapWidth);\n \t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n \t\t\tbody.toggleClass('sidebar-icon-only');\n-\t\t\tvar sideWidth = document.querySelector('.sidebar').offsetWidth;\n+\t\t\t// var sideWidth = document.querySelector('.sidebar').offsetWidth;\n \t\t\t// mapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n \t\t});\n \t\t//checkbox and radios\n \t\t$('.form-check label,.form-radio label').append(\n"
+                },
+                {
+                    "date": 1648475582095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t// console.log(mapWidth);\n \t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n \t\t\tbody.toggleClass('sidebar-icon-only');\n \t\t\t// var sideWidth = document.querySelector('.sidebar').offsetWidth;\n-\t\t\t// mapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n+\t\t\tmapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n \t\t});\n \t\t//checkbox and radios\n \t\t$('.form-check label,.form-radio label').append(\n \t\t\t'<i class=\"input-helper\"></i>'\n"
+                },
+                {
+                    "date": 1648475599146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,10 +55,8 @@\n \t\tconst mapWidth = document.querySelector('.map-container');\n \t\t// console.log(mapWidth);\n \t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n \t\t\tbody.toggleClass('sidebar-icon-only');\n-\t\t\t// var sideWidth = document.querySelector('.sidebar').offsetWidth;\n-\t\t\tmapWidth.style.padding = `0 0 0 ${sideWidth}px`;\n \t\t});\n \t\t//checkbox and radios\n \t\t$('.form-check label,.form-radio label').append(\n \t\t\t'<i class=\"input-helper\"></i>'\n"
+                },
+                {
+                    "date": 1648475606002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,65 +1,60 @@\n-(function ($) {\n-\t'use strict';\n-\t$(function () {\n-\t\tvar body = $('body');\n-\t\tvar contentWrapper = $('.content-wrapper');\n-\t\tvar scroller = $('.container-scroller');\n-\t\tvar footer = $('.footer');\n-\t\tvar sidebar = $('.sidebar');\n+(function($) {\n+  'use strict';\n+  $(function() {\n+    var body = $('body');\n+    var contentWrapper = $('.content-wrapper');\n+    var scroller = $('.container-scroller');\n+    var footer = $('.footer');\n+    var sidebar = $('.sidebar');\n \n-\t\t//Add active class to nav-link based on url dynamically\n-\t\t//Active class can be hard coded directly in html file also as required\n+    //Add active class to nav-link based on url dynamically\n+    //Active class can be hard coded directly in html file also as required\n \n-\t\tfunction addActiveClass(element) {\n-\t\t\tif (current === '') {\n-\t\t\t\t//for root url\n-\t\t\t\tif (element.attr('href').indexOf('index.html') !== -1) {\n-\t\t\t\t\telement.parents('.nav-item').last().addClass('active');\n-\t\t\t\t\tif (element.parents('.sub-menu').length) {\n-\t\t\t\t\t\telement.closest('.collapse').addClass('show');\n-\t\t\t\t\t\telement.addClass('active');\n-\t\t\t\t\t}\n-\t\t\t\t}\n-\t\t\t} else {\n-\t\t\t\t//for other url\n-\t\t\t\tif (element.attr('href').indexOf(current) !== -1) {\n-\t\t\t\t\telement.parents('.nav-item').last().addClass('active');\n-\t\t\t\t\tif (element.parents('.sub-menu').length) {\n-\t\t\t\t\t\telement.closest('.collapse').addClass('show');\n-\t\t\t\t\t\telement.addClass('active');\n-\t\t\t\t\t}\n-\t\t\t\t\tif (element.parents('.submenu-item').length) {\n-\t\t\t\t\t\telement.addClass('active');\n-\t\t\t\t\t}\n-\t\t\t\t}\n-\t\t\t}\n-\t\t}\n+    function addActiveClass(element) {\n+      if (current === \"\") {\n+        //for root url\n+        if (element.attr('href').indexOf(\"index.html\") !== -1) {\n+          element.parents('.nav-item').last().addClass('active');\n+          if (element.parents('.sub-menu').length) {\n+            element.closest('.collapse').addClass('show');\n+            element.addClass('active');\n+          }\n+        }\n+      } else {\n+        //for other url\n+        if (element.attr('href').indexOf(current) !== -1) {\n+          element.parents('.nav-item').last().addClass('active');\n+          if (element.parents('.sub-menu').length) {\n+            element.closest('.collapse').addClass('show');\n+            element.addClass('active');\n+          }\n+          if (element.parents('.submenu-item').length) {\n+            element.addClass('active');\n+          }\n+        }\n+      }\n+    }\n \n-\t\tvar current = location.pathname\n-\t\t\t.split('/')\n-\t\t\t.slice(-1)[0]\n-\t\t\t.replace(/^\\/|\\/$/g, '');\n-\t\t$('.nav li a', sidebar).each(function () {\n-\t\t\tvar $this = $(this);\n-\t\t\taddActiveClass($this);\n-\t\t});\n+    var current = location.pathname.split(\"/\").slice(-1)[0].replace(/^\\/|\\/$/g, '');\n+    $('.nav li a', sidebar).each(function() {\n+      var $this = $(this);\n+      addActiveClass($this);\n+    })\n \n-\t\t//Close other submenu in sidebar on opening any\n+    //Close other submenu in sidebar on opening any\n \n-\t\tsidebar.on('show.bs.collapse', '.collapse', function () {\n-\t\t\tsidebar.find('.collapse.show').collapse('hide');\n-\t\t});\n+    sidebar.on('show.bs.collapse', '.collapse', function() {\n+      sidebar.find('.collapse.show').collapse('hide');\n+    });\n \n-\t\t//Change sidebar\n \n-\t\tconst mapWidth = document.querySelector('.map-container');\n-\t\t// console.log(mapWidth);\n-\t\t$('[data-toggle=\"minimize\"]').on('click', function () {\n-\t\t\tbody.toggleClass('sidebar-icon-only');\n-\t\t});\n-\t\t//checkbox and radios\n-\t\t$('.form-check label,.form-radio label').append(\n-\t\t\t'<i class=\"input-helper\"></i>'\n-\t\t);\n-\t});\n-})(jQuery);\n+    //Change sidebar\n+\n+    $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n+      body.toggleClass('sidebar-icon-only');\n+    });\n+\n+    //checkbox and radios\n+    $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n+  });\n+})(jQuery);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648488930557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n+      \n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648488938995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      \n+      var map = \n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648488944144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      var map = \n+      var map \n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648488960935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      var map \n+      $\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648488986837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $\n+      $(\"map\")\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648488993657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\"map\")\n+      $(\".map-container\")\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648489001456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\".map-container\")\n+      $(\".map-\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648489007869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\".map-\n+      $(\".map-wrapper\").ad;\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648489013248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\".map-wrapper\").ad;\n+      $(\".map-wrapper\").css();\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648489028011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,11 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\".map-wrapper\").css();\n+      $(\".map-wrapper\").css({\n+        \"padding\"\n+      });\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648489033731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       $(\".map-wrapper\").css({\n-        \"padding\"\n+        \"padding-left\": \"0px\",\n       });\n     });\n \n     //checkbox and radios\n"
+                },
+                {
+                    "date": 1648489080637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\".map-wrapper\").css({\n-        \"padding-left\": \"0px\",\n+      $(\"#map-wrapper\").css({\n+        \"padding-left\": \"70px\",\n       });\n     });\n \n     //checkbox and radios\n"
+                },
+                {
+                    "date": 1648489092298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\"#map-wrapper\").css({\n+      $(\".map-con\").css({\n         \"padding-left\": \"70px\",\n       });\n     });\n \n"
+                },
+                {
+                    "date": 1648489134676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,10 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      $(\".map-con\").css({\n+      \n+      $(\".map-container\").css({\n         \"padding-left\": \"70px\",\n       });\n     });\n \n"
+                },
+                {
+                    "date": 1648489141554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      \n+      var map = \n       $(\".map-container\").css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489151338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      var map = \n-      $(\".map-container\").css({\n+      var map = ;\n+      .css({\n         \"padding-left\": \"70px\",\n       });\n     });\n \n"
+                },
+                {
+                    "date": 1648489157864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n     //Change sidebar\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n-      var map = ;\n-      .css({\n+      var map = $(\".map-container\");\n+      map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n \n"
+                },
+                {
+                    "date": 1648489208724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,8 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n+      // if()\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489218785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      // if()\n+      // if()/\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489248682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      // if()/\n+      // if()\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489371326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      // if()\n+      if()\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489377235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      if()\n+      if(map.css())\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489383984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      if(map.css())\n+      if(map.css(\"\"))\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489395393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      if(map.css(\"\"))\n+      if(map.css(\"padding-left\") === )\n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489403866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,10 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      if(map.css(\"padding-left\") === )\n+      if(map.css(\"padding-left\") === \"70px\")\n+      \n       map.css({\n         \"padding-left\": \"70px\",\n       });\n     });\n"
+                },
+                {
+                    "date": 1648489412785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,13 +52,13 @@\n \n     $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n-      if(map.css(\"padding-left\") === \"70px\")\n-      \n-      map.css({\n-        \"padding-left\": \"70px\",\n-      });\n+      if(map.css(\"padding-left\") === \"70px\") {\n+        map.css({\n+          \"padding-left\": \"70px\",\n+        });\n+      }\n     });\n \n     //checkbox and radios\n     $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n"
+                },
+                {
+                    "date": 1648489424141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,12 @@\n       body.toggleClass('sidebar-icon-only');\n       var map = $(\".map-container\");\n       if(map.css(\"padding-left\") === \"70px\") {\n         map.css({\n-          \"padding-left\": \"70px\",\n+          \"padding-left\": \"256px\",\n         });\n+      } else {\n+        \n       }\n     });\n \n     //checkbox and radios\n"
+                },
+                {
+                    "date": 1648489431216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,11 @@\n         map.css({\n           \"padding-left\": \"256px\",\n         });\n       } else {\n-        \n+        map.css({\n+          \"padding-left\": \"256px\",\n+        });\n       }\n     });\n \n     //checkbox and radios\n"
+                },
+                {
+                    "date": 1648489934971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n \n     //Add active class to nav-link based on url dynamically\n     //Active class can be hard coded directly in html file also as required\n \n+    \n \n-    \n     function addActiveClass(element) {\n       if (current === \"\") {\n         //for root url\n         if (element.attr('href').indexOf(\"index.html\") !== -1) {\n"
+                }
+            ],
+            "date": 1648475364809,
+            "name": "Commit-0",
+            "content": "(function($) {\n  'use strict';\n  $(function() {\n    var body = $('body');\n    var contentWrapper = $('.content-wrapper');\n    var scroller = $('.container-scroller');\n    var footer = $('.footer');\n    var sidebar = $('.sidebar');\n\n    //Add active class to nav-link based on url dynamically\n    //Active class can be hard coded directly in html file also as required\n\n    function addActiveClass(element) {\n      if (current === \"\") {\n        //for root url\n        if (element.attr('href').indexOf(\"index.html\") !== -1) {\n          element.parents('.nav-item').last().addClass('active');\n          if (element.parents('.sub-menu').length) {\n            element.closest('.collapse').addClass('show');\n            element.addClass('active');\n          }\n        }\n      } else {\n        //for other url\n        if (element.attr('href').indexOf(current) !== -1) {\n          element.parents('.nav-item').last().addClass('active');\n          if (element.parents('.sub-menu').length) {\n            element.closest('.collapse').addClass('show');\n            element.addClass('active');\n          }\n          if (element.parents('.submenu-item').length) {\n            element.addClass('active');\n          }\n        }\n      }\n    }\n\n    var current = location.pathname.split(\"/\").slice(-1)[0].replace(/^\\/|\\/$/g, '');\n    $('.nav li a', sidebar).each(function() {\n      var $this = $(this);\n      addActiveClass($this);\n    })\n\n    //Close other submenu in sidebar on opening any\n\n    sidebar.on('show.bs.collapse', '.collapse', function() {\n      sidebar.find('.collapse.show').collapse('hide');\n    });\n\n\n    //Change sidebar\n\n    $('[data-toggle=\"minimize\"]').on(\"click\", function() {\n      body.toggleClass('sidebar-icon-only');\n      \n    });\n\n    //checkbox and radios\n    $(\".form-check label,.form-radio label\").append('<i class=\"input-helper\"></i>');\n  });\n})(jQuery);"
+        }
+    ]
+}

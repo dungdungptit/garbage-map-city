@@ -1,0 +1,34 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/Get_vevent.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1651081217996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651081232825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // headers_list\r\n header(\"Access-Control-Allow-Origin: *\");\r\n header(\"Content-Type: application/json\");\r\n include($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\");\r\n-include($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_bin.php\");\r\n+include($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_ve.php\");\r\n // instantiate DB & connect\r\n $database = new Database();\r\n $db = $database->connect();\r\n // instantiate blog post object \r\n@@ -36,4 +36,5 @@\n     echo json_encode(\r\n         array('message' => 'No posts found')\r\n     );\r\n }\r\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651081787436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // headers_list\r\n header(\"Access-Control-Allow-Origin: *\");\r\n header(\"Content-Type: application/json\");\r\n include($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\");\r\n-include($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_ve.php\");\r\n+include($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_vevent.php\");\r\n // instantiate DB & connect\r\n $database = new Database();\r\n $db = $database->connect();\r\n // instantiate blog post object \r\n@@ -19,14 +19,9 @@\n     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n         extract($row);\r\n         $post_item = array(\r\n             'id' => $id,\r\n-            'createddate' => $createddate,\r\n-            'owners' => $owners,\r\n-            'lat' => $latitude,\r\n-            'long' => $longitude,\r\n-            'statuses' => $statuses,\r\n-            'addresses' => $addresses\r\n+            \r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n     }\r\n"
+                },
+                {
+                    "date": 1651081803797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,18 @@\n     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n         extract($row);\r\n         $post_item = array(\r\n             'id' => $id,\r\n+            'id_vehicle' => $id,\r\n+            'speed' => $id,\r\n+            'angle' => $id,\r\n+            'odometer' => $id,\r\n+            'enginehour' => $id,\r\n+            'altitude' => $id,\r\n+            'timeposition' => $id,\r\n+            'timeserver' => $id,\r\n+            'lat' => $id,\r\n+            'long' => $id,\r\n             \r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n"
+                },
+                {
+                    "date": 1651081814794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,18 +19,18 @@\n     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n         extract($row);\r\n         $post_item = array(\r\n             'id' => $id,\r\n-            'id_vehicle' => $id,\r\n-            'speed' => $id,\r\n-            'angle' => $id,\r\n-            'odometer' => $id,\r\n-            'enginehour' => $id,\r\n-            'altitude' => $id,\r\n-            'timeposition' => $id,\r\n-            'timeserver' => $id,\r\n-            'lat' => $id,\r\n-            'long' => $id,\r\n+            'id_vehicle' => $id_vehicle,\r\n+            'speed' => $speed,\r\n+            'angle' => $angle,\r\n+            'odometer' => $odometer,\r\n+            'enginehour' => $enginehour,\r\n+            'altitude' => $altitude,\r\n+            'timeposition' => $timeposition,\r\n+            'timeserver' => $timeserver,\r\n+            'lat' => $lat,\r\n+            'long' => $long,\r\n             \r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n"
+                }
+            ],
+            "date": 1651081217996,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\nheader(\"Access-Control-Allow-Origin: *\");\r\nheader(\"Content-Type: application/json\");\r\ninclude($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\");\r\ninclude($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_bin.php\");\r\n// instantiate DB & connect\r\n$database = new Database();\r\n$db = $database->connect();\r\n// instantiate blog post object \r\n$post  = new Post_bin($db);\r\n$result = $post->read();\r\n// Get row count\r\n$num = $result->rowCount();\r\n// echo $num;\r\nif ($num > 0) {\r\n    $post_arr = array();\r\n    $posts_arr['data'] = array();\r\n    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n        extract($row);\r\n        $post_item = array(\r\n            'id' => $id,\r\n            'createddate' => $createddate,\r\n            'owners' => $owners,\r\n            'lat' => $latitude,\r\n            'long' => $longitude,\r\n            'statuses' => $statuses,\r\n            'addresses' => $addresses\r\n        );\r\n        // push to 'data'\r\n        array_push($posts_arr['data'], $post_item);\r\n    }\r\n    echo json_encode($posts_arr);\r\n} else {\r\n    // No posts\r\n    echo json_encode(\r\n        array('message' => 'No posts found')\r\n    );\r\n}\r\n"
+        }
+    ]
+}

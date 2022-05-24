@@ -1,0 +1,34 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/R_temporary.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1650505967072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506468274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n header(\"Access-Control-Allow-Origin: *\");\r\n header(\"Content-Type: application/json\");\r\n-include $_SERVER[\"DOCUMENT_ROOT\"] . \"https://mapcity.online/majestic/Dashboard/php/config/Database.php\";\r\n-include $_SERVER[\"DOCUMENT_ROOT\"] . \"https://mapcity.online/majestic/Dashboard/php/models/Post_acc.php\";\r\n+include $_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\";\r\n+include $_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_acc.php\";\r\n \r\n $database = new Database();\r\n $db = $database->connect();\r\n $post = new Post_acc($db);\r\n"
+                },
+                {
+                    "date": 1650793763448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n header(\"Access-Control-Allow-Origin: *\");\r\n header(\"Content-Type: application/json\");\r\n-include $_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\";\r\n-include $_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_acc.php\";\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n \r\n $database = new Database();\r\n $db = $database->connect();\r\n $post = new Post_acc($db);\r\n"
+                },
+                {
+                    "date": 1650793768810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // headers_list\r\n header(\"Access-Control-Allow-Origin: *\");\r\n header(\"Content-Type: application/json\");\r\n     include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_Acc.php\"]);\r\n \r\n $database = new Database();\r\n $db = $database->connect();\r\n $post = new Post_acc($db);\r\n"
+                },
+                {
+                    "date": 1650794459514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n header(\"Access-Control-Allow-Origin: *\");\r\n header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_Acc.php\"]);\r\n+include $_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\";\r\n+include $_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_acc.php\";\r\n \r\n $database = new Database();\r\n $db = $database->connect();\r\n $post = new Post_acc($db);\r\n"
+                }
+            ],
+            "date": 1650505967072,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\nheader(\"Access-Control-Allow-Origin: *\");\r\nheader(\"Content-Type: application/json\");\r\ninclude $_SERVER[\"DOCUMENT_ROOT\"] . \"https://mapcity.online/majestic/Dashboard/php/config/Database.php\";\r\ninclude $_SERVER[\"DOCUMENT_ROOT\"] . \"https://mapcity.online/majestic/Dashboard/php/models/Post_acc.php\";\r\n\r\n$database = new Database();\r\n$db = $database->connect();\r\n$post = new Post_acc($db);\r\n$array_item = array(\r\n    'id' => $post->id,\r\n    'username' => $post->username,\r\n    'password' => $post->password,\r\n    'fullname' => $post->fullname\r\n);\r\necho json_encode($array_item);\r\n?>\r\n"
+        }
+    ]
+}

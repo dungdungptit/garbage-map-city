@@ -1,0 +1,18 @@
+{
+    "sourceFile": "majestic/Dashboard/js/getData-login.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1650508024050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1650508024050,
+            "name": "Commit-0",
+            "content": "function login() {\r\n    $.getJSON(\"/majestic/Dashboard/php/api/post/R_Acc.php\", {\r\n        username: $(\"#username\").val(),\r\n        password: $(\"#password\").val()\r\n\r\n    }, function (data) {\r\n        console.log(data);\r\n        if (data['id'] == null) {\r\n            alert(\"sai mat khau\");\r\n            return false;\r\n        }\r\n        else {\r\n            $.ajax({\r\n                url: \"/majestic/Dashboard/php/api/post/admin.php\",\r\n                method: \"POST\",\r\n                data: {\r\n                    id: data['id'],\r\n                    username: $(\"#username\").val(),\r\n                    password: $(\"#password\").val(),\r\n                    fullname:data['fullname']\r\n                }, success: function (response) {\r\n\r\n                }\r\n            });\r\n            window.location = \"/majestic/Dashboard/map.php\";\r\n        }\r\n        \r\n    });\r\n}"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "sourceFile": "majestic/Dashboard/test.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1650744499260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650744505089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n   <title>Document</title>\r\n </head>\r\n <body>\r\n-  \r\n+  <button></button>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744518283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n   <title>Document</title>\r\n </head>\r\n <body>\r\n-  <button></button>\r\n+  <button onclick=\"put()\"></button>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744528996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n   <title>Document</title>\r\n </head>\r\n <body>\r\n-  <button onclick=\"put()\"></button>\r\n+  <button onclick=\"pushSCDL()\"></button>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744535902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,11 @@\n </head>\r\n <body>\r\n   <button onclick=\"pushSCDL()\"></button>\r\n </body>\r\n-</html>\n\\ No newline at end of file\n+</html>\r\n+<script>\r\n+  function pushSCDL() {\r\n+    var xhr = new XMLHttpRequest();\r\n+    xhr.open('GET', 'http://localhost:3000/api/pushSCDL', true);\r\n+    xhr.send();\r\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744541663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,7 @@\n </body>\r\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n-    var xhr = new XMLHttpRequest();\r\n-    xhr.open('GET', 'http://localhost:3000/api/pushSCDL', true);\r\n-    xhr.send();\r\n-  }\n\\ No newline at end of file\n+    \r\n+  }\r\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744567722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,19 @@\n </body>\r\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n-    \r\n+    let id = \"HN1234\";\r\n+    for (let i = 0; i < dataTemporary.length; i++) {\r\n\\ No newline at end of file\n+      // console.log(dataTemporary[i][0], dataTemporary[i][1]);\r\n+      setTimeout(function () {\r\n+        $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n+          id: id,\r\n+          lat: dataTemporary[i][0],\r\n+          long: dataTemporary[i][1]\r\n+        }, function (data) {\r\n+          // console.log(data);\r\n+        });\r\n+      }, 500 * i);\r\n+    }\r\n   }\r\n-  \n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744574719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,8 @@\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n-    for (let i = 0; i < dataTemporary.length; i++) {\r\n-      // console.log(dataTemporary[i][0], dataTemporary[i][1]);\r\n-      setTimeout(function () {\r\n         $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n           id: id,\r\n           lat: dataTemporary[i][0],\r\n           long: dataTemporary[i][1]\r\n"
+                },
+                {
+                    "date": 1650744580693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,6 @@\n           long: dataTemporary[i][1]\r\n         }, function (data) {\r\n           // console.log(data);\r\n         });\r\n-      }, 500 * i);\r\n-    }\r\n   }\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744586372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,27 @@\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n-<head>\r\n-  <meta charset=\"UTF-8\">\r\n-  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n-  <title>Document</title>\r\n-</head>\r\n-<body>\r\n-  <button onclick=\"pushSCDL()\"></button>\r\n-</body>\r\n+\r\n+  <head>\r\n+    <meta charset=\"UTF-8\">\r\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n+    <title>Document</title>\r\n+  </head>\r\n+\r\n+  <body>\r\n+    <button onclick=\"pushSCDL()\"></button>\r\n+  </body>\r\n+\r\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n-        $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n-          id: id,\r\n-          lat: dataTemporary[i][0],\r\n-          long: dataTemporary[i][1]\r\n-        }, function (data) {\r\n-          // console.log(data);\r\n-        });\r\n+    $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n+      id: id,\r\n+      lat: dataTemporary[i][0],\r\n+      long: dataTemporary[i][1]\r\n+    }, function (data) {\r\n+      // console.log(data);\r\n+    });\r\n   }\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744605742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n     $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n       id: id,\r\n-      lat: dataTemporary[i][0],\r\n+      lat: -111,\r\n       long: dataTemporary[i][1]\r\n     }, function (data) {\r\n       // console.log(data);\r\n     });\r\n"
+                },
+                {
+                    "date": 1650744627493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n-    $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n+    $.getJSON(\"https://mapcity.online//majestic/Dashboard/php/api/post/update_service.php\", {\r\n       id: id,\r\n       lat: -111,\r\n-      long: dataTemporary[i][1]\r\n+      long: -111\r\n     }, function (data) {\r\n       // console.log(data);\r\n     });\r\n   }\r\n"
+                },
+                {
+                    "date": 1650744702854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,16 @@\n     <title>Document</title>\r\n   </head>\r\n \r\n   <body>\r\n-    <button onclick=\"pushSCDL()\"></button>\r\n+    <button onclick=\"pushSCDL()\">Push</button>\r\n   </body>\r\n \r\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n-    $.getJSON(\"https://mapcity.online//majestic/Dashboard/php/api/post/update_service.php\", {\r\n+    $.getJSON(\"https://mapcity.online/majestic/Dashboard/php/api/post/update_service.php\", {\r\n       id: id,\r\n       lat: -111,\r\n       long: -111\r\n     }, function (data) {\r\n"
+                },
+                {
+                    "date": 1650744783728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,13 @@\n     }, function (data) {\r\n       // console.log(data);\r\n     });\r\n   }\r\n-</script>\n\\ No newline at end of file\n+</script>\r\n+  <script src=\"./node_modules/leaflet/dist/leaflet.js\"></script>\r\n+  <script src=\"https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js\"></script>\r\n+  <script src=\"vendors/base/vendor.bundle.base.js\"></script>\r\n+  <script src=\"js/off-canvas.js\"></script>\r\n+  <script src=\"js/hoverable-collapse.js\"></script>\r\n+  <script src=\"js/template.js\"></script>\r\n+  <script src=\"js/map.js\"></script>\r\n+  <script src=\"js/leaflet-providers.js\"></script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650744820605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,12 +24,7 @@\n       // console.log(data);\r\n     });\r\n   }\r\n </script>\r\n-  <script src=\"./node_modules/leaflet/dist/leaflet.js\"></script>\r\n-  <script src=\"https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js\"></script>\r\n-  <script src=\"vendors/base/vendor.bundle.base.js\"></script>\r\n-  <script src=\"js/off-canvas.js\"></script>\r\n-  <script src=\"js/hoverable-collapse.js\"></script>\r\n-  <script src=\"js/template.js\"></script>\r\n-  <script src=\"js/map.js\"></script>\r\n-  <script src=\"js/leaflet-providers.js\"></script>\n\\ No newline at end of file\n+<script src=\"./node_modules/leaflet/dist/leaflet.js\"></script>\r\n+<script src=\"https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js\"></script>\r\n+<script src=\"vendors/base/vendor.bundle.base.js\"></script>\r\n"
+                },
+                {
+                    "date": 1650744828308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,5 @@\n       // console.log(data);\r\n     });\r\n   }\r\n </script>\r\n-<script src=\"./node_modules/leaflet/dist/leaflet.js\"></script>\r\n-<script src=\"https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js\"></script>\r\n <script src=\"vendors/base/vendor.bundle.base.js\"></script>\r\n"
+                },
+                {
+                    "date": 1650744854922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n     $.getJSON(\"https://mapcity.online/majestic/Dashboard/php/api/post/update_service.php\", {\r\n       id: id,\r\n-      lat: -111,\r\n+      lat: -13,\r\n       long: -111\r\n     }, function (data) {\r\n       // console.log(data);\r\n     });\r\n"
+                },
+                {
+                    "date": 1650747221758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n </html>\r\n <script>\r\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n-    $.getJSON(\"https://mapcity.online/majestic/Dashboard/php/api/post/update_service.php\", {\r\n+    $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n       id: id,\r\n       lat: -13,\r\n       long: -111\r\n     }, function (data) {\r\n"
+                },
+                {
+                    "date": 1650747457073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   function pushSCDL() {\r\n     let id = \"HN1234\";\r\n     $.getJSON(\"/majestic/Dashboard/php/api/post/update_service.php\", {\r\n       id: id,\r\n-      lat: -13,\r\n+      lat: -130,\r\n       long: -111\r\n     }, function (data) {\r\n       // console.log(data);\r\n     });\r\n"
+                }
+            ],
+            "date": 1650744499260,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>Document</title>\r\n</head>\r\n<body>\r\n  \r\n</body>\r\n</html>"
+        }
+    ]
+}

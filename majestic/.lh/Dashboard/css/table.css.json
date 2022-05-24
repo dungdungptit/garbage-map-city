@@ -1,0 +1,78 @@
+{
+    "sourceFile": "Dashboard/css/table.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1648820357309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648821250128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \tborder-collapse: collapse !important;\r\n }\r\n \r\n tbody {\r\n-\toverflow: auto;\r\n+\toverflow: hidden auto;\r\n \tborder: none !important;\r\n }\r\n .table-responsive {\r\n \toverflow: auto;\r\n"
+                },
+                {
+                    "date": 1648821266971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \toverflow: hidden auto;\r\n \tborder: none !important;\r\n }\r\n .table-responsive {\r\n-\toverflow: auto;\r\n+\toverflow: hddauto;\r\n \tmax-height: calc(57.5px + calc(55.5px * 10));\r\n \tborder: 1px solid black !important;\r\n }\r\n .table-responsive thead {\r\n"
+                },
+                {
+                    "date": 1648824799927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \toverflow: hidden auto;\r\n \tborder: none !important;\r\n }\r\n .table-responsive {\r\n-\toverflow: hddauto;\r\n+\toverflow: hidden auto;\r\n \tmax-height: calc(57.5px + calc(55.5px * 10));\r\n \tborder: 1px solid black !important;\r\n }\r\n .table-responsive thead {\r\n@@ -29,5 +29,6 @@\n }\r\n thead th {\r\n \tborder: none !important;\r\n \tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n+  font-ư\r\n }\r\n"
+                },
+                {
+                    "date": 1648824812154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,6 @@\n }\r\n thead th {\r\n \tborder: none !important;\r\n \tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n-  font-ư\r\n+  font-weight: 900;\r\n }\r\n"
+                },
+                {
+                    "date": 1648824956453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,4 +31,5 @@\n \tborder: none !important;\r\n \tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n   font-weight: 900;\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1648824962840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,7 @@\n }\r\n thead th {\r\n \tborder: none !important;\r\n \tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n-  font-weight: 900;\r\n+  font-weight: 900 !;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1648824974163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,8 @@\n }\r\n thead th {\r\n \tborder: none !important;\r\n \tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n-  font-weight: 900 !;\r\n+  font-weight: 900 !important;\r\n }\r\n \r\n+thead th\r\n"
+                },
+                {
+                    "date": 1648825267302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,5 +32,8 @@\n \tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n   font-weight: 900 !important;\r\n }\r\n \r\n-thead th\r\n+thead th:first-child {\r\n+  border-left: none !important;\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1648825272816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,4 +36,7 @@\n thead th:first-child {\r\n   border-left: none !important;\r\n }\r\n \r\n+.btn {\r\n+\tpo\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648825278470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,7 @@\n   border-left: none !important;\r\n }\r\n \r\n .btn {\r\n-\tpo\r\n+\tposition: absolute;\r\n+\ttop: 50%;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648825286002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,6 +38,7 @@\n }\r\n \r\n .btn {\r\n \tposition: absolute;\r\n-\ttop: 50%;\r\n+\ttop: 50%;left: 50%;\r\n+\tz-index: ;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648829024181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,4 @@\n \r\n thead th:first-child {\r\n   border-left: none !important;\r\n }\r\n-\r\n-.btn {\r\n-\tposition: absolute;\r\n-\ttop: 50%;left: 50%;\r\n-\tz-index: ;\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648829080680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,4 +35,10 @@\n \r\n thead th:first-child {\r\n   border-left: none !important;\r\n }\r\n+\r\n+.btn {\r\n+\tposition: absolute;\r\n+\ttop: 50%;left: 50%;\r\n+\tz-index: 1000000;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648829086120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n thead th:first-child {\r\n   border-left: none !important;\r\n }\r\n \r\n-.btn {\r\n+.btn-open {\r\n \tposition: absolute;\r\n \ttop: 50%;left: 50%;\r\n \tz-index: 1000000;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648910676992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,4 @@\n \r\n thead th:first-child {\r\n   border-left: none !important;\r\n }\r\n-\r\n-.btn-open {\r\n-\tposition: absolute;\r\n-\ttop: 50%;left: 50%;\r\n-\tz-index: 1000000;\r\n-}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1648820357309,
+            "name": "Commit-0",
+            "content": "td,\r\nth {\r\n\tborder: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n\tpadding: 20px 15px !important;\r\n}\r\n\r\ntable {\r\n\tposition: relative;\r\n\tborder-collapse: collapse !important;\r\n}\r\n\r\ntbody {\r\n\toverflow: auto;\r\n\tborder: none !important;\r\n}\r\n.table-responsive {\r\n\toverflow: auto;\r\n\tmax-height: calc(57.5px + calc(55.5px * 10));\r\n\tborder: 1px solid black !important;\r\n}\r\n.table-responsive thead {\r\n\tposition: sticky;\r\n\ttop: 0;\r\n\tz-index: 1;\r\n\tbackground-color: #fff;\r\n\tborder: none !important;\r\n\tmargin-bottom: 1px !important;\r\n\tbox-shadow: -1px 1px 0 1px #000 !important;\r\n}\r\nthead th {\r\n\tborder: none !important;\r\n\tborder-left: 1px solid rgba(151, 151, 151, 0.48) !important;\r\n}\r\n"
+        }
+    ]
+}

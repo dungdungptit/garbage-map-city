@@ -1,0 +1,46 @@
+{
+    "sourceFile": "Dashboard/css/modal.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1648910664722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648910679079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n-.<input type=\"text\" class=\"form-control\" id=\"recipient-name\" /\n\\ No newline at end of file\n+\r\n+.btn-open {\r\n+\tposition: absolute;\r\n+\ttop: 50%;left: 50%;\r\n+\tz-index: 1000000;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648910738310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-\r\n .btn-open {\r\n \tposition: absolute;\r\n \ttop: 50%;left: 50%;\r\n \tz-index: 1000000;\r\n-}\n\\ No newline at end of file\n+}\r\n+.moda\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648910745530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n \tposition: absolute;\r\n \ttop: 50%;left: 50%;\r\n \tz-index: 1000000;\r\n }\r\n-.moda\n\\ No newline at end of file\n+.modal-edit-img {\r\n+  w200px\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648910751964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,7 @@\n \ttop: 50%;left: 50%;\r\n \tz-index: 1000000;\r\n }\r\n .modal-edit-img {\r\n-  w200px\r\n+  width: 250px;\r\n+  haut\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648910757947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,7 @@\n \tz-index: 1000000;\r\n }\r\n .modal-edit-img {\r\n   width: 250px;\r\n-  haut\r\n+  height: auto;\r\n+  \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648910763817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n }\r\n .modal-edit-img {\r\n   width: 250px;\r\n   height: auto;\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1648910810343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n }\r\n .modal-edit-img {\r\n   width: 250px;\r\n   height: auto;\r\n-  user-select: ;\r\n+  user-select: n;\r\n }\r\n .modal-edit-img img {\r\n   width: 100%;\r\n   height: 100%;\r\n"
+                }
+            ],
+            "date": 1648910664722,
+            "name": "Commit-0",
+            "content": ".<input type=\"text\" class=\"form-control\" id=\"recipient-name\" /"
+        }
+    ]
+}

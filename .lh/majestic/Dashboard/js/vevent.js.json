@@ -1,0 +1,26 @@
+{
+    "sourceFile": "majestic/Dashboard/js/vevent.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1651249906071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651249911237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-function upadte() {\r\n+function updateV() {\r\n   $.getJSON(\"/majestic/Dashboard/php/api/post/R_vevent.php\", {},\r\n     function (data) {\r\n       var appe = $('.noti-drop');\r\n       appe.html(\"\");\r\n"
+                },
+                {
+                    "date": 1651249919995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-function updateV() {\r\n+function updateVevent() {\r\n   $.getJSON(\"/majestic/Dashboard/php/api/post/R_vevent.php\", {},\r\n     function (data) {\r\n       var appe = $('.noti-drop');\r\n       appe.html(\"\");\r\n@@ -22,5 +22,5 @@\n     }\r\n   );\r\n }\r\n \r\n-setInterval(xxx, 1000);\r\n+setInterval(updateVevent, 1000);\r\n"
+                }
+            ],
+            "date": 1651249906071,
+            "name": "Commit-0",
+            "content": "function upadte() {\r\n  $.getJSON(\"/majestic/Dashboard/php/api/post/R_vevent.php\", {},\r\n    function (data) {\r\n      var appe = $('.noti-drop');\r\n      appe.html(\"\");\r\n      for(let i = 0; i < data.data.length; i++) {\r\n        appe.append(`<a class=\"dropdown-item\">\r\n\t\t\t\t\t\t\t\t<div class=\"item-thumbnail\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"item-icon bg-warning\">\r\n\t\t\t\t\t\t\t\t\t\t<i class=\"mdi mdi-truck mx-0\"></i>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"item-content\">\r\n\t\t\t\t\t\t\t\t\t<h6 class=\"font-weight-normal\">Vehicle event</h6>\r\n\t\t\t\t\t\t\t\t\t<p class=\"font-weight-light small-text mb-0 text-muted\">\r\n\t\t\t\t\t\t\t\t\t\tID = ${data.data[i].id_vehicle}<br>\r\n\t\t\t\t\t\t\t\t\t\t${data.data[i].error_title}.\r\n\t\t\t\t\t\t\t\t\t</p>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</a>`);\r\n      }\r\n    }\r\n  );\r\n}\r\n\r\nsetInterval(xxx, 1000);\r\n"
+        }
+    ]
+}

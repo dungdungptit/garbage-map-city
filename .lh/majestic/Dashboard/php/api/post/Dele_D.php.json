@@ -1,0 +1,34 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/Dele_D.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1650505936419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506438558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post_driver.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_driver.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650793836301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_driver.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650793842248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n     include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_driver.php\"]);\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                },
+                {
+                    "date": 1650794436989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_driver.php\"]);\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_driver.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     // instantiate blog post object \r\n"
+                }
+            ],
+            "date": 1650505936419,
+            "name": "Commit-0",
+            "content": "<?php\r\n    header(\"Access-Control-Allow-Origin: *\");\r\n    header(\"Content-Type: application/json\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post_driver.php\");\r\n    // instantiate DB & connect\r\n    $database = new Database();\r\n    $db = $database->connect();\r\n    // instantiate blog post object \r\n    $post  = new Post_driver($db);\r\n    // Get id\r\n    $post->id = $_GET['id'];\r\n\r\n    $post->delete();\r\n    // Create array\r\n    $yn = array(\r\n        'true'=>\"true\"\r\n    );\r\n    echo json_encode($yn);\r\n"
+        }
+    ]
+}

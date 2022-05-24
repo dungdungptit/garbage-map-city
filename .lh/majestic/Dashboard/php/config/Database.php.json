@@ -1,0 +1,66 @@
+{
+    "sourceFile": "majestic/Dashboard/php/config/Database.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1650506387537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506504573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n-        private $host = 'localhost';/\r\n+        private $host = 'localhost';\r\n         private $db_name =  'u669684904_DATA_MAP';\r\n         private $username = 'u669684904_bundaunuocmam';\r\n         private $password = 'Bundau12345';\r\n         private $conn;\r\n"
+                },
+                {
+                    "date": 1650506552762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n         private $host = 'localhost';\r\n-        private $db_name =  'u669684904_DATA_MAP';\r\n+        private $db_name =  'DATA_MAP';\r\n         private $username = 'u669684904_bundaunuocmam';\r\n         private $password = 'Bundau12345';\r\n         private $conn;\r\n         // DB connect\r\n"
+                },
+                {
+                    "date": 1650506559557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     class Database{\r\n         // DB params\r\n         private $host = 'localhost';\r\n         private $db_name =  'DATA_MAP';\r\n-        private $username = 'u669684904_bundaunuocmam';\r\n+        private $username = 'root';\r\n         private $password = 'Bundau12345';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n"
+                },
+                {
+                    "date": 1650506579500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n-        private $host = 'localhost';\r\n+        private $host = '127.0.0.1';\r\n         private $db_name =  'DATA_MAP';\r\n         private $username = 'root';\r\n-        private $password = 'Bundau12345';\r\n+        private $password = 'tung';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n             $this-> conn = null;\r\n"
+                },
+                {
+                    "date": 1650794022889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n         private $host = '127.0.0.1';\r\n-        private $db_name =  'DATA_MAP';\r\n+        private $db_name =  'u66968_DATA_MAP';\r\n         private $username = 'root';\r\n         private $password = 'tung';\r\n         private $conn;\r\n         // DB connect\r\n"
+                },
+                {
+                    "date": 1650794029746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n         private $host = '127.0.0.1';\r\n-        private $db_name =  'u66968_DATA_MAP';\r\n+        private $db_name =  'u669684904_DATA_MAP';\r\n         private $username = 'root';\r\n         private $password = 'tung';\r\n         private $conn;\r\n         // DB connect\r\n"
+                },
+                {
+                    "date": 1650794037368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     class Database{\r\n         // DB params\r\n         private $host = '127.0.0.1';\r\n         private $db_name =  'u669684904_DATA_MAP';\r\n-        private $username = 'root';\r\n+        private $username = 'u669684904root';\r\n         private $password = 'tung';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n"
+                },
+                {
+                    "date": 1650794045983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     class Database{\r\n         // DB params\r\n         private $host = '127.0.0.1';\r\n         private $db_name =  'u669684904_DATA_MAP';\r\n-        private $username = 'u669684904root';\r\n+        private $username = 'u669684904_bundau';\r\n         private $password = 'tung';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n"
+                },
+                {
+                    "date": 1650794054592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n     class Database{\r\n         // DB params\r\n         private $host = '127.0.0.1';\r\n         private $db_name =  'u669684904_DATA_MAP';\r\n-        private $username = 'u669684904_bundau';\r\n-        private $password = 'tung';\r\n+        private $username = 'u669684904_bundaunuocmam';\r\n+        private $password = 'Bundau123';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n             $this-> conn = null;\r\n"
+                },
+                {
+                    "date": 1650794063452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n-        private $host = '127.0.0.1';\r\n+        private $host = 'local';\r\n         private $db_name =  'u669684904_DATA_MAP';\r\n         private $username = 'u669684904_bundaunuocmam';\r\n-        private $password = 'Bundau123';\r\n+        private $password = 'Bundau12345';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n             $this-> conn = null;\r\n"
+                },
+                {
+                    "date": 1650794272370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n-        private $host = 'local';\r\n+        private $host = 'localhost:';\r\n         private $db_name =  'u669684904_DATA_MAP';\r\n         private $username = 'u669684904_bundaunuocmam';\r\n         private $password = 'Bundau12345';\r\n         private $conn;\r\n"
+                },
+                {
+                    "date": 1650794415889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <?php\r\n     class Database{\r\n         // DB params\r\n-        private $host = 'localhost:';\r\n-        private $db_name =  'u669684904_DATA_MAP';\r\n-        private $username = 'u669684904_bundaunuocmam';\r\n-        private $password = 'Bundau12345';\r\n+        private $host = '127.0.0.1';\r\n+        private $db_name =  'DATA_MAP';\r\n+        private $username = 'root';\r\n+        private $password = 'tung';\r\n         private $conn;\r\n         // DB connect\r\n         public function connect(){\r\n             $this-> conn = null;\r\n"
+                }
+            ],
+            "date": 1650506387537,
+            "name": "Commit-0",
+            "content": "<?php\r\n    class Database{\r\n        // DB params\r\n        private $host = 'localhost';/\r\n        private $db_name =  'u669684904_DATA_MAP';\r\n        private $username = 'u669684904_bundaunuocmam';\r\n        private $password = 'Bundau12345';\r\n        private $conn;\r\n        // DB connect\r\n        public function connect(){\r\n            $this-> conn = null;\r\n            try{\r\n                $this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->db_name,$this->username,$this->password);\r\n                $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);\r\n            }catch(PDOException $e){\r\n                echo \"Error connecting: \".$e->getMessage();\r\n                \r\n            }\r\n            return $this->conn;\r\n        }\r\n    }\r\n?>"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Dashboard/scss/components/_tables.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1648652808904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1648652808904,
+            "name": "Commit-0",
+            "content": "/* Tables */\n\n.table {\n\tmargin-bottom: 0;\n\tthead {\n\t\tth {\n\t\t\tborder-top: 0;\n\t\t\tborder-bottom-width: 1px;\n\t\t\tfont-weight: 500;\n\t\t\tfont-size: 1rem;\n\t\t\ti {\n\t\t\t\tmargin-left: 0.325rem;\n\t\t\t}\n\t\t}\n\t}\n\tth,\n\ttd {\n\t\tvertical-align: middle;\n\t\tline-height: 1;\n\t}\n\ttd {\n\t\tfont-size: $default-font-size;\n\t\timg {\n\t\t\twidth: 36px;\n\t\t\theight: 36px;\n\t\t\tborder-radius: 100%;\n\t\t}\n\t\t.badge {\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\t&.table-borderless {\n\t\tborder: none;\n\t\ttr,\n\t\ttd,\n\t\tth {\n\t\t\tborder: none;\n\t\t}\n\t}\n\t&.table-bordered {\n\t\tborder-top: 1px solid $border-color;\n\t}\n}\n"
+        }
+    ]
+}

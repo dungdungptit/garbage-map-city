@@ -1,0 +1,66 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/R_vevent.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1651082686046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651083206673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             'enginehour' => $enginehour,\r\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n-            'lat' => $lat,\r\n+            'latitude' => $lat,\r\n             'long' => $long,\r\n             \r\n         );\r\n         // push to 'data'\r\n"
+                },
+                {
+                    "date": 1651083225060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,14 +23,14 @@\n             'id_vehicle' => $id_vehicle,\r\n             'speed' => $speed,\r\n             'angle' => $angle,\r\n             'odometer' => $odometer,\r\n-            'enginehour' => $enginehour,\r\n+            'enginehours' => $enginehour,\r\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n             'latitude' => $lat,\r\n-            'long' => $long,\r\n+            'longitude' => $long,\r\n             \r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n"
+                },
+                {
+                    "date": 1651083347884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             'enginehours' => $enginehour,\r\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n-            'latitude' => $lat,\r\n+            'latitude' => $latitu,\r\n             'longitude' => $long,\r\n             \r\n         );\r\n         // push to 'data'\r\n"
+                },
+                {
+                    "date": 1651083353323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n             'enginehours' => $enginehour,\r\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n-            'latitude' => $latitu,\r\n-            'longitude' => $long,\r\n+            'latitude' => $altitude,\r\n+            'longitude' => $longitude,\r\n             \r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n"
+                },
+                {
+                    "date": 1651083582158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,17 @@\n // echo $num;\r\n if ($num > 0) {\r\n     $post_arr = array();\r\n     $posts_arr['data'] = array();\r\n-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n+    // while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n         extract($row);\r\n         $post_item = array(\r\n             'id' => $id,\r\n             'id_vehicle' => $id_vehicle,\r\n             'speed' => $speed,\r\n             'angle' => $angle,\r\n             'odometer' => $odometer,\r\n-            'enginehours' => $enginehour,\r\n+            'enginehours' => $enginehours,\r\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n             'latitude' => $altitude,\r\n"
+                },
+                {
+                    "date": 1651083592341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,26 +16,26 @@\n if ($num > 0) {\r\n     $post_arr = array();\r\n     $posts_arr['data'] = array();\r\n     // while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n-        extract($row);\r\n-        $post_item = array(\r\n-            'id' => $id,\r\n-            'id_vehicle' => $id_vehicle,\r\n-            'speed' => $speed,\r\n-            'angle' => $angle,\r\n-            'odometer' => $odometer,\r\n-            'enginehours' => $enginehours,\r\n-            'altitude' => $altitude,\r\n-            'timeposition' => $timeposition,\r\n-            'timeserver' => $timeserver,\r\n-            'latitude' => $altitude,\r\n-            'longitude' => $longitude,\r\n+    //     extract($row);\r\n+    //     $post_item = array(\r\n+    //         'id' => $id,\r\n+    //         'id_vehicle' => $id_vehicle,\r\n+    //         'speed' => $speed,\r\n+    //         'angle' => $angle,\r\n+    //         'odometer' => $odometer,\r\n+    //         'enginehours' => $enginehours,\r\n+    //         'altitude' => $altitude,\r\n+    //         'timeposition' => $timeposition,\r\n+    //         'timeserver' => $timeserver,\r\n+    //         'latitude' => $altitude,\r\n+    //         'longitude' => $longitude,\r\n             \r\n-        );\r\n-        // push to 'data'\r\n-        array_push($posts_arr['data'], $post_item);\r\n-    }\r\n+    //     );\r\n+    //     // push to 'data'\r\n+    //     array_push($posts_arr['data'], $post_item);\r\n+    // }\r\n     echo json_encode($posts_arr);\r\n } else {\r\n     // No posts\r\n     echo json_encode(\r\n"
+                },
+                {
+                    "date": 1651083605269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,27 +15,27 @@\n // echo $num;\r\n if ($num > 0) {\r\n     $post_arr = array();\r\n     $posts_arr['data'] = array();\r\n-    // while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n-    //     extract($row);\r\n-    //     $post_item = array(\r\n-    //         'id' => $id,\r\n-    //         'id_vehicle' => $id_vehicle,\r\n-    //         'speed' => $speed,\r\n-    //         'angle' => $angle,\r\n-    //         'odometer' => $odometer,\r\n-    //         'enginehours' => $enginehours,\r\n-    //         'altitude' => $altitude,\r\n-    //         'timeposition' => $timeposition,\r\n-    //         'timeserver' => $timeserver,\r\n-    //         'latitude' => $altitude,\r\n-    //         'longitude' => $longitude,\r\n+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n+        extract($row);\r\n+        $post_item = array(\r\n+            'id' => $id,\r\n+            'id_vehicle' => $id_vehicle,\r\n+            'speed' => $speed,\r\n+            'angle' => $angle,\r\n+            'odometer' => $odometer,\r\n+            'enginehours' => $enginehours,\r\n+            'altitude' => $altitude,\r\n+            'timeposition' => $timeposition,\r\n+            'timeserver' => $timeserver,\r\n+            'latitude' => $altitude,\r\n+            'longitude' => $longitude,\r\n             \r\n-    //     );\r\n-    //     // push to 'data'\r\n-    //     array_push($posts_arr['data'], $post_item);\r\n-    // }\r\n+        );\r\n+        // push to 'data'\r\n+        array_push($posts_arr['data'], $post_item);\r\n+    }\r\n     echo json_encode($posts_arr);\r\n } else {\r\n     // No posts\r\n     echo json_encode(\r\n"
+                },
+                {
+                    "date": 1651083612582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n if ($num > 0) {\r\n     $post_arr = array();\r\n     $posts_arr['data'] = array();\r\n     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n-        extract($row);\r\n+        // extract($row);\r\n         $post_item = array(\r\n             'id' => $id,\r\n             'id_vehicle' => $id_vehicle,\r\n             'speed' => $speed,\r\n"
+                },
+                {
+                    "date": 1651083634855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n if ($num > 0) {\r\n     $post_arr = array();\r\n     $posts_arr['data'] = array();\r\n     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n-        // extract($row);\r\n+        extract($row);\r\n         $post_item = array(\r\n             'id' => $id,\r\n             'id_vehicle' => $id_vehicle,\r\n             'speed' => $speed,\r\n@@ -27,9 +27,9 @@\n             'enginehours' => $enginehours,\r\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n-            'latitude' => $altitude,\r\n+            'latitude' => $latitude,\r\n             'longitude' => $longitude,\r\n             \r\n         );\r\n         // push to 'data'\r\n"
+                },
+                {
+                    "date": 1651085848094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n             'latitude' => $latitude,\r\n-            'longitude' => $longitude,\r\n+            'longitude' => $longitude\r\n             \r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n"
+                },
+                {
+                    "date": 1651246671786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n             'latitude' => $latitude,\r\n             'longitude' => $longitude\r\n-            \r\n+            ''\r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n     }\r\n"
+                },
+                {
+                    "date": 1651246677395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n             'altitude' => $altitude,\r\n             'timeposition' => $timeposition,\r\n             'timeserver' => $timeserver,\r\n             'latitude' => $latitude,\r\n-            'longitude' => $longitude\r\n-            ''\r\n+            'longitude' => $longitude,\r\n+            'error_title' => $error_title\r\n         );\r\n         // push to 'data'\r\n         array_push($posts_arr['data'], $post_item);\r\n     }\r\n"
+                }
+            ],
+            "date": 1651082686046,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\nheader(\"Access-Control-Allow-Origin: *\");\r\nheader(\"Content-Type: application/json\");\r\ninclude($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/config/Database.php\");\r\ninclude($_SERVER[\"DOCUMENT_ROOT\"] . \"/majestic/Dashboard/php/models/Post_vevent.php\");\r\n// instantiate DB & connect\r\n$database = new Database();\r\n$db = $database->connect();\r\n// instantiate blog post object \r\n$post  = new Post_vevent($db);\r\n$result = $post->read();\r\n// Get row count\r\n$num = $result->rowCount();\r\n// echo $num;\r\nif ($num > 0) {\r\n    $post_arr = array();\r\n    $posts_arr['data'] = array();\r\n    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {\r\n        extract($row);\r\n        $post_item = array(\r\n            'id' => $id,\r\n            'id_vehicle' => $id_vehicle,\r\n            'speed' => $speed,\r\n            'angle' => $angle,\r\n            'odometer' => $odometer,\r\n            'enginehour' => $enginehour,\r\n            'altitude' => $altitude,\r\n            'timeposition' => $timeposition,\r\n            'timeserver' => $timeserver,\r\n            'lat' => $lat,\r\n            'long' => $long,\r\n            \r\n        );\r\n        // push to 'data'\r\n        array_push($posts_arr['data'], $post_item);\r\n    }\r\n    echo json_encode($posts_arr);\r\n} else {\r\n    // No posts\r\n    echo json_encode(\r\n        array('message' => 'No posts found')\r\n    );\r\n}\r\n?>"
+        }
+    ]
+}

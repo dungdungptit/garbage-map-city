@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Dashboard/php/setData.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1648650499214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1648650499214,
+            "name": "Commit-0",
+            "content": "<?php \r\n    include (\"connection.php\");\r\n    $conn = connectDatabase();\r\n    $runner = $_POST['runner'];\r\n    if($runner === \"getDatatable\") {\r\n        if($conn){\r\n            $query = \"SELECT VEHICLE.ID as ID_VEHICLE,BIN.ID,BIN.ADDRESSES,DRIVER.FULLNAME,DRIVER.ID as ID_DRIVER  from task \r\n                inner join vehicle on vehicle.ID = task.ID_VEHICLE\r\n                inner join bin on bin.ID = TASK.ID_BIN\r\n                inner join drivervehicle on DRIVERVEHICLE.ID_VEHICLE = VEHICLE.ID\r\n                inner join driver on driver.id = DRIVERVEHICLE.ID_DRIVER\";\r\n                $dataLoad = sqlsrv_query($conn,$query);\r\n                while($rs = sqlsrv_fetch_array($dataLoad)){\r\n                    echo $rs[\"ID_VEHICLE\"];\r\n                    echo \"\\t\";\r\n                    echo $rs[\"ID\"];\r\n                    echo \"\\t\";\r\n                    echo $rs[\"ADDRESSES\"];\r\n                    echo \"\\t\";\r\n                    echo $rs[\"ID_DRIVER\"];\r\n                    echo \"\\t\";\r\n                    echo $rs[\"FULLNAME\"];\r\n                    echo \"\\n\";\r\n                }\r\n        }else if($conn === false) {\r\n            die( print_r( sqlsrv_errors(), true));\r\n        }sqlsrv_close( $conn ); \r\n    }\r\n?>"
+        }
+    ]
+}

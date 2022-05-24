@@ -1,0 +1,102 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/update_service.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1650505998976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506499604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n"
+                },
+                {
+                    "date": 1650740405658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n     $post->longitude = $_GET[\"long\"];\r\n \r\n     $post->updateService();\r\n     $item = array('yes' => \"yes\");\r\n-    echo json_encode($item);\n\\ No newline at end of file\n+    echo json_encode($item);\r\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650747125962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,6 @@\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n     $post->updateService();\r\n-    $item = array('yes' => \"yes\");\r\n-    echo json_encode($item);\r\n-    \n\\ No newline at end of file\n+    $item = array('yes' => \"ok\");\r\n+    echo json_encode($item);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650747369530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n-    \r\n+            \r\n     $post->id = $_GET[\"id\"];\r\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n"
+                },
+                {
+                    "date": 1650747375842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n-            \r\n+    \r\n+    $id \r\n+\r\n     $post->id = $_GET[\"id\"];\r\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n"
+                },
+                {
+                    "date": 1650747382658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n-    $id \r\n+    $id = $_GET[\"id\"];\r\n \r\n-    $post->id = $_GET[\"id\"];\r\n+    $post->id = \r\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n     $post->updateService();\r\n"
+                },
+                {
+                    "date": 1650747389599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     $post = new Post_vehicle($db);\r\n     \r\n     $id = $_GET[\"id\"];\r\n \r\n-    $post->id = \r\n+    $post->id = $id;\r\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n     $post->updateService();\r\n"
+                },
+                {
+                    "date": 1650747395865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n     $id = $_GET[\"id\"];\r\n-\r\n+    \r\n     $post->id = $id;\r\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n"
+                },
+                {
+                    "date": 1650747402069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n     $id = $_GET[\"id\"];\r\n-    \r\n+    $lat = \r\n     $post->id = $id;\r\n     $post->latitude = $_GET[\"lat\"];\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n"
+                },
+                {
+                    "date": 1650747407992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n     $id = $_GET[\"id\"];\r\n-    $lat = \r\n+    $lat = $_GET[\"lat\"];\r\n     $post->id = $id;\r\n-    $post->latitude = $_GET[\"lat\"];\r\n+    $post->latitude = lat\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n     $post->updateService();\r\n     $item = array('yes' => \"ok\");\r\n"
+                },
+                {
+                    "date": 1650747416394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n     $post = new Post_vehicle($db);\r\n     \r\n     $id = $_GET[\"id\"];\r\n     $lat = $_GET[\"lat\"];\r\n+    $long = \r\n     $post->id = $id;\r\n     $post->latitude = lat\r\n     $post->longitude = $_GET[\"long\"];\r\n \r\n"
+                },
+                {
+                    "date": 1650747422353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n     $post = new Post_vehicle($db);\r\n     \r\n     $id = $_GET[\"id\"];\r\n     $lat = $_GET[\"lat\"];\r\n-    $long = \r\n+    $long = $_GET[\"long\"];\r\n     $post->id = $id;\r\n     $post->latitude = lat\r\n-    $post->longitude = $_GET[\"long\"];\r\n+    $post->longitude = long\r\n \r\n     $post->updateService();\r\n     $item = array('yes' => \"ok\");\r\n     echo json_encode($item);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650747428224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n     $id = $_GET[\"id\"];\r\n     $lat = $_GET[\"lat\"];\r\n     $long = $_GET[\"long\"];\r\n     $post->id = $id;\r\n-    $post->latitude = lat\r\n-    $post->longitude = long\r\n+    $post->latitude = $lat\r\n+    $post->longitude = $long\r\n \r\n     $post->updateService();\r\n     $item = array('yes' => \"ok\");\r\n     echo json_encode($item);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650793592138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"https/\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n@@ -11,10 +11,10 @@\n     $id = $_GET[\"id\"];\r\n     $lat = $_GET[\"lat\"];\r\n     $long = $_GET[\"long\"];\r\n     $post->id = $id;\r\n-    $post->latitude = $lat\r\n-    $post->longitude = $long\r\n+    $post->latitude = $lat;\r\n+    $post->longitude = $long;\r\n \r\n     $post->updateService();\r\n     $item = array('yes' => \"ok\");\r\n     echo json_encode($item);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650793599796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https/\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"https://mapcity.omline/\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n"
+                },
+                {
+                    "date": 1650793609292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.omline/\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"https://mapcity.omline/majestic/Dashboard/php/config/Database.php\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n"
+                },
+                {
+                    "date": 1650793614912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.omline/majestic/Dashboard/php/config/Database.php\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"];\r\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n"
+                },
+                {
+                    "date": 1650793629921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"];\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n"
+                },
+                {
+                    "date": 1650793638137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n     include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php\"]/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n"
+                },
+                {
+                    "date": 1650793645649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n     include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php\"]/models/Post_vehicle.php\");\r\n+    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n"
+                },
+                {
+                    "date": 1650794481009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\"]);\r\n-    include ($_SERVER[\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\"]);\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n     $post = new Post_vehicle($db);\r\n     \r\n"
+                }
+            ],
+            "date": 1650505998976,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\n    header(\"Access-Control-Allow-Origin: *\");\r\n    header(\"Content-Type: application/json\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/config/Database.php\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"https://mapcity.online/majestic/Dashboard/php/models/Post_vehicle.php\");\r\n    $database = new Database();\r\n    $db = $database->connect();\r\n    $post = new Post_vehicle($db);\r\n    \r\n    $post->id = $_GET[\"id\"];\r\n    $post->latitude = $_GET[\"lat\"];\r\n    $post->longitude = $_GET[\"long\"];\r\n\r\n    $post->updateService();\r\n    $item = array('yes' => \"yes\");\r\n    echo json_encode($item);"
+        }
+    ]
+}

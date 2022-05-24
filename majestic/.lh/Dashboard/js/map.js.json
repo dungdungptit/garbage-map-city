@@ -1,0 +1,66 @@
+{
+    "sourceFile": "Dashboard/js/map.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1648440489862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648441008080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,4 @@\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n }).addTo(map);\r\n-\r\n-L.marker([51.5, -0.09]).addTo(map)\r\n-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')\r\n-    .openPopup();\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648441054359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var map = L.map('map').setView([51.505, -0.09], 13);\r\n+var map = L.map('map').setView([21.037181, 105.833485], 13);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441073436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var map = L.map('map').setView([21.037181, 105.833485], 13);\r\n+var map = L.map('map').setView([21.037181, 105.833485], 16);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441106992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n var map = L.map('map').setView([21.037181, 105.833485], 16);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n-    attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n+    attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n+    \r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441116370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n var map = L.map('map').setView([21.037181, 105.833485], 16);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n-    \r\n+    maxZoom: 25,\r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441128847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n var map = L.map('map').setView([21.037181, 105.833485], 16);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n-    maxZoom: 25,\r\n+    maxZoom: 20,\r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441138713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-var map = L.map('map').setView([21.037181, 105.833485], 16);\r\n+var map = L.map('map').setView([21.037181, 105.833485], 20);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n-    maxZoom: 20,\r\n+    maxZoom: 19,\r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441161540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n-var map = L.map('map').setView([21.037181, 105.833485], 20);\r\n+var map = L.map('map').setView([21.037181, 105.833485], 16);\r\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n     maxZoom: 19,\r\n+    \r\n }).addTo(map);\r\n"
+                },
+                {
+                    "date": 1648441175761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,8 @@\n \r\n L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n     attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n     maxZoom: 19,\r\n-    \r\n+\r\n }).addTo(map);\r\n+\r\n+L\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648441181317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     maxZoom: 19,\r\n \r\n }).addTo(map);\r\n \r\n-L\n\\ No newline at end of file\n+L.marker([21.037181, 105.833485]).addTo(map)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648472273074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,11 @@\n     maxZoom: 19,\r\n \r\n }).addTo(map);\r\n \r\n+var OpenStreetMap_CH = L.tileLayer('https://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {\r\n+\tmaxZoom: 18,\r\n+\tattribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n+\tbounds: [[45, 5], [48, 11]]\r\n+});\r\n \r\n-\r\n L.marker([21.037181, 105.833485]).addTo(map)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648473200317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,15 +17,11 @@\n );\r\n \r\n // layer.addTo(map);\r\n \r\n-var Thunderforest_Landscape = L.tileLayer(\r\n-\t'https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?',\r\n-\t{\r\n-\t\tattribution:\r\n-\t\t\t'&copy; <a href=\"http://www.thunderforest.com/\">Thunderforest</a>, &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n-\t\t// apikey: '<your apikey>',\r\n-\t\tmaxZoom: 22,\r\n-\t}\r\n-).addTo(map);\r\n+var Thunderforest_Landscape = var OpenStreetMap_CH = L.tileLayer('https://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {\r\n+\tmaxZoom: 18,\r\n+\tattribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',\r\n+\tbounds: [[45, 5], [48, 11]]\r\n+});.addTo(map);\r\n \r\n L.marker([21.037181, 105.833485]).addTo(map);\r\n"
+                }
+            ],
+            "date": 1648440489862,
+            "name": "Commit-0",
+            "content": "var map = L.map('map').setView([51.505, -0.09], 13);\r\n\r\nL.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n    attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n}).addTo(map);\r\n\r\nL.marker([51.5, -0.09]).addTo(map)\r\n    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')\r\n    .openPopup();"
+        }
+    ]
+}

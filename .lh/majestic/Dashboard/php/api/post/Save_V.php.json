@@ -1,0 +1,22 @@
+{
+    "sourceFile": "majestic/Dashboard/php/api/post/Save_V.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1650505985877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650506488314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n // headers_list\r\n     header(\"Access-Control-Allow-Origin: *\");\r\n     header(\"Content-Type: application/json\");\r\n-    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic//Dashboard/php/config/Database.php\");\r\n+    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n     include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic//Dashboard/php/models/Post_vehicle.php\");\r\n     // instantiate DB & connect\r\n     $database = new Database();\r\n     $db = $database->connect();\r\n"
+                }
+            ],
+            "date": 1650505985877,
+            "name": "Commit-0",
+            "content": "<?php\r\n// headers_list\r\n    header(\"Access-Control-Allow-Origin: *\");\r\n    header(\"Content-Type: application/json\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic/Dashboard/php/config/Database.php\");\r\n    include ($_SERVER[\"DOCUMENT_ROOT\"].\"/majestic//Dashboard/php/models/Post_vehicle.php\");\r\n    // instantiate DB & connect\r\n    $database = new Database();\r\n    $db = $database->connect();\r\n    // instantiate blog post object \r\n    $post  = new Post_vehicle($db);\r\n    // Get id\r\n    $post->id = $_GET['id'];\r\n    $post->code = $_GET['code'];\r\n    $post->typed= $_GET['typed'];\r\n    $post->license= $_GET['license'];\r\n    $post->imei = $_GET['imei'];\r\n    $post->timestamps= $_GET['timestamps'];\r\n    $post->latitude = $_GET['lat'];\r\n    $post->longitude = $_GET['long'];\r\n    $post->weights = $_GET['weights'];\r\n    $post->addresses= $_GET['addresses'];\r\n    $post->statuses = $_GET['status'];\r\n    $post->update();\r\n\r\n    // Create array\r\n    $yn = array(\r\n        'true'=>\"true\",\r\n        \"status\" => $post->statuses\r\n    );\r\n    // echo json_encode($yn);\r\n    // Make JSON\r\n    // print_r(json_encode($post_arr));\r\n"
+        }
+    ]
+}

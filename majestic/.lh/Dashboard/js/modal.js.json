@@ -1,0 +1,46 @@
+{
+    "sourceFile": "Dashboard/js/modal.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1648829344084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648829440544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var myModal = document.getElementById('exampleModal');\r\n+var myModal = document.getElementById('modal');\r\n var myInput = document.getElementById('myInput');\r\n \r\n myModal.addEventListener('shown.bs.modal', function () {\r\n \tmyInput.focus();\r\n"
+                },
+                {
+                    "date": 1648829468203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var myModal = document.getElementById('modal');\r\n+var myModal = document.getElementById('modalDetail');\r\n var myInput = document.getElementById('myInput');\r\n \r\n myModal.addEventListener('shown.bs.modal', function () {\r\n \tmyInput.focus();\r\n"
+                },
+                {
+                    "date": 1648830751023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,1 @@\n-var myModal = document.getElementById('modalDetail');\r\n-var myInput = document.getElementById('myInput');\r\n-\r\n-myModal.addEventListener('shown.bs.modal', function () {\r\n-\tmyInput.focus();\r\n-});\r\n+var myModal = document.querySelector('btn-open');\r\n"
+                },
+                {
+                    "date": 1648830758725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-var myModal = document.querySelector('btn-open');\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648912363489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,10 @@\n-\n+var myModal = document.getElementById('modalDetail');\r\n+var myButt = document.querySelector('.btn-open');\r\n+myModal.addEventListener('shown.bs.modal', function () {});\r\n+myButt.addEventListener('click', function (e) {\r\n+\tconsole.log(e.target);\r\n+});\r\n+$(function () {\r\n+\tvar $winHeight = $(window).height();\r\n+\t$('.container').height($winHeight);\r\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1648912363667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n });\r\n $(function () {\r\n \tvar $winHeight = $(window).height();\r\n \t$('.container').height($winHeight);\r\n-});\n\\ No newline at end of file\n+});\r\n"
+                },
+                {
+                    "date": 1648912510990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,4 @@\n myModal.addEventListener('shown.bs.modal', function () {});\r\n myButt.addEventListener('click', function (e) {\r\n \tconsole.log(e.target);\r\n });\r\n-$( function() {\r\n-  var $winHeight = $( window ).height()\r\n-  $( '.container' ).height( $winHeight );\r\n-});\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1648829344084,
+            "name": "Commit-0",
+            "content": "var myModal = document.getElementById('exampleModal');\r\nvar myInput = document.getElementById('myInput');\r\n\r\nmyModal.addEventListener('shown.bs.modal', function () {\r\n\tmyInput.focus();\r\n});\r\n"
+        }
+    ]
+}
